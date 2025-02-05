@@ -2,6 +2,8 @@ import os
 import json
 from datetime import datetime
 
+import time
+
 from promptflow.client import PFClient
 from promptflow.core import AzureOpenAIModelConfiguration
 from promptflow.evals.evaluate import evaluate
@@ -81,6 +83,7 @@ def main():
     print(f"Executing evaluation: {evaluation_name}.") 
 
     try:
+        time.sleep(3)
         result = evaluate(
             evaluation_name=evaluation_name,
             data=data,
